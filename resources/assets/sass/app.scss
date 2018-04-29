@@ -16,7 +16,8 @@ $theme-colors: (
 );
 
 $spacers: map-merge((
-  10: ($spacer * 14)
+  10: ($spacer * 14),
+  6: ($spacer * 8)
 ), $spacers);
 
 // Bootstrap
@@ -27,10 +28,22 @@ $spacers: map-merge((
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.bg-img {
+.header-img {
   background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
-  url("/img/bg-img.jpeg") no-repeat center;
+  url("/img/header.jpeg") no-repeat center;
   background-size: cover;
+}
+
+.guarantee-img {
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+  url("/img/guarantee.jpeg") no-repeat center;
+  background-size: auto;
+}
+
+.freedom-img {
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+  url("/img/freedom.jpeg") no-repeat fixed;
+  background-size: auto;
 }
 
 .btn-rounded {
