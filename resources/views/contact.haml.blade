@@ -1,0 +1,29 @@
+@extends('layouts.app')
+@section('title', 'contact')
+@section('description', 'description of the contact page')
+@section('content')
+%section.py-10.text-center.header-img.text-white
+	.container.text-center
+		%h1.mb-5.display-4 Contactez-nous tout renseignements ou demande de	devis
+		.row.justify-content-center
+			.col-sm-8
+				%form{action: '/contact', method: 'POST'}
+					{{ csrf_field() }} 
+					.form-group
+						%label{for: 'nom_complet', class: ''} Nom Complet :
+						%input{type: 'text', name: 'nom_complet', id: 'nom_complet', class: 'form-control', placeholder: 'Nom et Prénom', required: 'required'}
+					.form-group
+						%label{for: 'siren', class: ''} Numéro SIREN :
+						%input{type: 'text', name: 'siren', id: 'siren', class: 'form-control', placeholder: 'Numéro de SIREN', required: 'required'}
+					.form-group
+						%label{for: 'email', class: ''} Email :
+						%input{type: 'email', name: 'email', id: 'email', class: 'form-control', placeholder: 'Email', required: 'required'}
+					.form-group
+						%label{for: 'objet', class: ''} Objet du message :
+						%input{type: 'text', name: 'objet', id: 'objet', class: 'form-control', placeholder: 'Objet', required: 'required'}
+					.form-group
+						%label{for: 'contenu', class: ''} Contenu du message :
+						%textarea{name: 'contenu', id: 'contenu', class: 'form-control', placeholder: 'Message...', required: 'required'}
+					%p.text-center
+						%input{type: 'submit', value: 'Je fais ma demande', class: 'btn btn-success btn-lg btn-rounded px-5' }	
+	%a{ href: '/', class: 'btn btn-primary btn-rounded mt-5' } Retour à la page d'accueil
